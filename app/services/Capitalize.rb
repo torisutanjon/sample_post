@@ -1,0 +1,3 @@
+class Capitalize
+
+end

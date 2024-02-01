@@ -1,0 +1,19 @@
+<div class="absolute top-0 left-0 h-screen w-screen flexitems-center justify-center ">
+    <%= button_to "logout", destroy_user_session_path, method: :delete  %>
+        <h1 class="text-black/75">All Post</h1>
+    <div class="relative mt-4 py-4 px-4 flex flex-col items-start justify-evenly text-black/75">
+    <%= link_to "Add New Post", new_post_path %>
+    <table class="border-[1px] mt-4 border-black/75 p-4">
+        <tr class="border-[1px] border-black/75 p-2">
+            <th class="border-[1px] border-black/75 p-2">Post Content</th>
+            <th class="border-[1px] border-black/75 p-2 pl-4">Action</th>
+        </tr>
+        <% @posts.each do |post| %>
+            <tr class="border-[1px] border-black/75 p-2">
+                <td class="border-[1px] border-black/75 p-2"> <%= post.body %> </td>
+                <td class="border-[1px] border-black/75 p-2 pl-4"> <%= link_to "View", post_path(post) %> </td>
+            </tr>
+        <% end%>
+    </table>
+    </div>
+</div>
